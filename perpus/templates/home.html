@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Dashboard - SIPUSTAKA
+{% endblock %}
+
+{% block content %}
+
+<div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+
+    <!-- Total Siswa -->
+    <article class="rounded-3xl bg-white p-6 shadow-lg border border-slate-200">
+        <div class="flex items-center justify-between text-slate-500 mb-4">
+            <p class="font-medium">Total Siswa</p>
+
+            <span class="text-blue-600 material-icons-outlined">
+                groups
+            </span>
+        </div>
+
+        <p class="text-3xl font-semibold text-slate-900">
+            {{ total_siswa }}
+        </p>
+
+        <p class="mt-2 text-sm text-slate-500">
+            Jumlah seluruh siswa terdaftar.
+        </p>
+    </article>
+
+    <!-- Total Buku -->
+    <article class="rounded-3xl bg-white p-6 shadow-lg border border-slate-200">
+        <div class="flex items-center justify-between text-slate-500 mb-4">
+            <p class="font-medium">Total Buku</p>
+
+            <span class="text-blue-600 material-icons-outlined">
+                inventory
+            </span>
+        </div>
+
+        <p class="text-3xl font-semibold text-slate-900">
+            {{ total_buku }}
+        </p>
+
+        <p class="mt-2 text-sm text-slate-500">
+            Keseluruhan unit buku tersedia.
+        </p>
+    </article>
+
+    <!-- Sedang Dipinjam -->
+    <article class="rounded-3xl bg-white p-6 shadow-lg border border-slate-200">
+        <div class="flex items-center justify-between text-slate-500 mb-4">
+            <p class="font-medium">Sedang Dipinjam</p>
+
+            <span class="text-yellow-500 material-icons-outlined">
+                schedule
+            </span>
+        </div>
+
+        <p class="text-3xl font-semibold text-slate-900">
+            {{ total_peminjaman_aktif }}
+        </p>
+
+        <p class="mt-2 text-sm text-slate-500">
+            Transaksi peminjaman aktif.
+        </p>
+    </article>
+
+    <!-- Sudah Dikembalikan -->
+    <article class="rounded-3xl bg-white p-6 shadow-lg border border-slate-200">
+        <div class="flex items-center justify-between text-slate-500 mb-4">
+            <p class="font-medium">Sudah Dikembalikan</p>
+
+            <span class="text-green-500 material-icons-outlined">
+                task_alt
+            </span>
+        </div>
+
+        <p class="text-3xl font-semibold text-slate-900">
+            {{ total_peminjaman_selesai }}
+        </p>
+
+        <p class="mt-2 text-sm text-slate-500">
+            Transaksi yang sudah selesai.
+        </p>
+    </article>
+
+</div>
+
+{% endblock %}

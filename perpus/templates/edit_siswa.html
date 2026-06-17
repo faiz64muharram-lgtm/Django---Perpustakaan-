@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1 class="text-3xl font-bold text-slate-900">Edit Siswa</h1>
+<p class="text-gray-600">Halaman edit siswa - HSI Boarding School Purworejo</p>
+
+<form method="post" class="space-y-5">
+  {% csrf_token %}
+
+  <div>
+    <label class="block text-sm font-medium text-slate-700 mb-1">Nama</label>
+    <input
+      type="text"
+      name="nama"
+      value="{{ siswa.nama }}"
+      required
+      class="w-full px-4 py-2 border border-slate-300 rounded-lg text-sm"
+    />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium text-slate-700 mb-1"> Kelas </label>
+
+    <select
+      name="kelas"
+      required
+      class="w-full px-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+      {% for kelas in kelas_list %}
+      <option value="{{ kelas.kelas }}">{{ kelas.kelas }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium text-slate-700 mb-1">NIS</label>
+    <input
+      type="number"
+      name="nis"
+      value="{{ siswa.nis }}"
+      required
+      class="w-full px-4 py-2 border border-slate-300 rounded-lg text-sm"
+    />
+  </div>
+  <div>
+    <label class="block text-sm font-medium text-slate-700 mb-1">Status</label>
+
+    <select
+      name="is_active"
+      class="w-full px-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+      <option value="true" {% if siswa.is_active %}selected{% endif %}>Aktif</option>
+
+      <option value="false" {% if not siswa.is_active %}selected{% endif %}>Tidak Aktif</option>
+    </select>
+  </div>
+
+  <div class="flex gap-3 pt-2">
+    <button type="submit" class="px-4 py-2 bg-yellow-500 text-white rounded-lg text-sm font-medium hover:bg-yellow-600">
+      Update
+    </button>
+
+    <a
+      href="{% url 'daftar_siswa' %}"
+      class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-200"
+    >
+      Batal
+    </a>
+  </div>
+</form>
+{% endblock %}

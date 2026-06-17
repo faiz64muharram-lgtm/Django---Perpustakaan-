@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="text-3xl font-bold text-slate-900">Detail Buku</h1>
+<p class="text-">Halaman detail buku - perpustakaan sekolah</p>
+<br>
+
+<div class="grid gap-4 md:grid-cols-2">
+  <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+    <p class="text-sm text-slate-500">ID</p>
+    <p class="font-semibold text-slate-900">{{ buku.id }}</p>
+  </div>
+  <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+    <p class="text-sm text-slate-500">Judul</p>
+    <p class="font-semibold text-slate-900">{{ buku.judul }}</p>
+  </div>
+  <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+    <p class="text-sm text-slate-500">Pengarang</p>
+    <p class="font-semibotext-slate-900">{{ buku.pengarang }}</p>
+  </div>
+  <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+    <p class="text-sm text-slate-500">Penerbit</p>
+    <p class="font-semibold text-slate-900">{{ buku.penerbit }}</p>
+  </div>
+  <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+    <p class="text-sm text-slate-500">Kategori</p>
+    <p class="font-semibold text-slate-900">{{ buku.kategori }}</p>
+  </div>
+  <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+    <p class="text-sm text-slate-500">Tahun Terbit</p>
+    <p class="font-semibold text-slate-900">{{ buku.tahun_terbit }}</p>
+  </div>
+  <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+    <p class="text-sm text-slate-500">Rak</p>
+    <p class="font-semibold text-slate-900">{{ buku.rak }}</p>
+  </div>
+  <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+    <p class="text-sm text-slate-500">Stok</p>
+    <p class="font-semibold text-slate-900">{{ buku.stok }}</p>
+  
+    
+
+  </div>
+  
+
+  <!-- disini area per item nya -->
+</div>
+
+<div class="mt-6">
+  <a
+    href="{% url 'daftar_buku' %}"
+    class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm bg-blue-600 font-medium hover:bg-slate-200"
+  >
+    Kembali
+  </a>
+</div>
+{% endblock %}
